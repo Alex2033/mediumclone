@@ -10,7 +10,7 @@ import {RegisterRequestInterface} from 'src/app/auth/types/registerRequest.inter
 @Component({
   selector: 'mc-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
   form: FormGroup
@@ -32,14 +32,13 @@ export class RegisterComponent implements OnInit {
     this.form = this.fb.group({
       username: ['', Validators.required],
       email: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', Validators.required],
     })
   }
 
   onSubmit(): void {
-    console.log('submit', this.form.value, this.form.valid)
     const request: RegisterRequestInterface = {
-      user: this.form.value
+      user: this.form.value,
     }
     this.store.dispatch(registerAction({request}))
   }
