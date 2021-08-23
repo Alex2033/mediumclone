@@ -1,3 +1,4 @@
+import {AuthService} from 'src/app/auth/services/auth.service'
 import {Component, OnInit} from '@angular/core'
 import {FormGroup, FormBuilder, Validators} from '@angular/forms'
 import {Store, select} from '@ngrx/store'
@@ -21,7 +22,11 @@ export class RegisterComponent implements OnInit {
   isSubmitting$: Observable<boolean>
   backendErrors$: Observable<BackendErrorsInterface | null>
 
-  constructor(private fb: FormBuilder, private store: Store) {}
+  constructor(
+    private fb: FormBuilder,
+    private store: Store,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
     this.initializeForm()
@@ -46,5 +51,8 @@ export class RegisterComponent implements OnInit {
       user: this.form.value,
     }
     this.store.dispatch(registerAction({request}))
+    this.authService.register(this.form.value).subscribe((currentUser) => {
+      console.log('currentUser:', currentUser)
+    })
   }
 }
