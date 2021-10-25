@@ -1,7 +1,7 @@
 import {
   loginAction,
-  loginSuccessAction,
   loginFailureAction,
+  loginSuccessAction,
 } from './../actions/login.actions'
 import {Injectable} from '@angular/core'
 import {createEffect, Actions, ofType} from '@ngrx/effects'
