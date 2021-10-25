@@ -1,3 +1,4 @@
+import {TopBarModule} from './shared/modules/top-bar/top-bar.module'
 import {BrowserModule} from '@angular/platform-browser'
 import {NgModule} from '@angular/core'
 import {StoreModule} from '@ngrx/store'
@@ -23,6 +24,7 @@ import {EffectsModule} from '@ngrx/effects'
       logOnly: environment.production,
     }),
     EffectsModule.forRoot([]),
+    TopBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
