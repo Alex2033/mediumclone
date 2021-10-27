@@ -1,3 +1,4 @@
+import {PaginationModule} from './../pagination/pagination.module'
 import {LoadingModule} from './../loading/loading.module'
 import {NgModule} from '@angular/core'
 import {CommonModule} from '@angular/common'
@@ -18,6 +19,7 @@ import {ErrorMessageModule} from '../errorMessage/errorMessage.module'
     RouterModule,
     ErrorMessageModule,
     LoadingModule,
+    PaginationModule,
   ],
   declarations: [FeedComponent],
   exports: [FeedComponent],
