@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { BackendErrorMessagesComponent } from './backend-error-messages.component';
 
@@ -6,7 +6,7 @@ describe('BackendErrorMessagesComponent', () => {
   let component: BackendErrorMessagesComponent;
   let fixture: ComponentFixture<BackendErrorMessagesComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ BackendErrorMessagesComponent ]
     })
