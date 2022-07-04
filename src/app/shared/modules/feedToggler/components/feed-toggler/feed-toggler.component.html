@@ -7,7 +7,13 @@
     </li>
 
     <li class="nav-item">
-      <a [routerLink]="['/']" routerLinkActive="active" class="nav-link"
+      <a
+        [routerLink]="['/']"
+        routerLinkActive="active"
+        class="nav-link"
+        [routerLinkActiveOptions]="{
+          exact: true
+        }"
         >Global feed</a
       >
     </li>
@@ -17,7 +23,9 @@
         routerLinkActive="active"
         [routerLink]="['/tags', tagNameProps]"
         class="nav-link"
-        >{{ tagNameProps }}</a
+      >
+        <i class="ion-pound"></i>
+        {{ tagNameProps }}</a
       >
     </li>
   </ul>

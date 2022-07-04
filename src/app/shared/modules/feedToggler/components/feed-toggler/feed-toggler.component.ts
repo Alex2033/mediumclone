@@ -6,7 +6,6 @@ import {Observable} from 'rxjs'
 @Component({
   selector: 'mc-feed-toggler',
   templateUrl: './feed-toggler.component.html',
-  styleUrls: ['./feed-toggler.component.scss'],
 })
 export class FeedTogglerComponent implements OnInit {
   @Input('tagName') tagNameProps: string | null
