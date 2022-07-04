@@ -6,7 +6,7 @@ import {
   HttpRequest,
 } from '@angular/common/http'
 import {Observable} from 'rxjs'
-import {PersistanceService} from '../services/persistance.service'
+import {PersistanceService} from '@app/shared'
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {

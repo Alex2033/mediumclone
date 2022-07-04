@@ -1,11 +1,13 @@
-import {BannerModule} from './../shared/modules/banner/banner.module'
+import {
+  BannerModule,
+  FeedModule,
+  FeedTogglerModule,
+  PopularTagsModule,
+} from '@app/shared'
 import {NgModule} from '@angular/core'
 import {CommonModule} from '@angular/common'
-import {FeedModule} from '../shared/modules/feed/feed.module'
 import {RouterModule, Routes} from '@angular/router'
 import {GlobalFeedComponent} from './components/globalFeed.component'
-import {PopularTagsModule} from '../shared/modules/popularTags/popularTags.module'
-import {FeedTogglerModule} from '../shared/modules/feedToggler/feedToggler.module'
 
 const routes: Routes = [
   {

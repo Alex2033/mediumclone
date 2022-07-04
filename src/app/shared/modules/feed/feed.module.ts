@@ -1,5 +1,3 @@
-import {PaginationModule} from './../pagination/pagination.module'
-import {LoadingModule} from './../loading/loading.module'
 import {NgModule} from '@angular/core'
 import {CommonModule} from '@angular/common'
 import {FeedComponent} from './components/feed/feed.component'
@@ -9,8 +7,12 @@ import {StoreModule} from '@ngrx/store'
 import {reducers} from './store/reducers'
 import {FeedService} from './services/feed.service'
 import {RouterModule} from '@angular/router'
-import {ErrorMessageModule} from '../errorMessage/errorMessage.module'
-import {TagListModule} from '../tagList/tagList.module'
+import {
+  ErrorMessageModule,
+  LoadingModule,
+  PaginationModule,
+  TagListModule,
+} from '@app/shared'
 
 @NgModule({
   imports: [

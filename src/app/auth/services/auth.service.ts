@@ -5,7 +5,7 @@ import {Observable} from 'rxjs'
 import {map} from 'rxjs/operators'
 
 import {RegisterRequestInterface} from 'src/app/auth/types/registerRequest.interface'
-import {CurrentUserInterface} from 'src/app/shared/types/currentUser.interface'
+import {CurrentUserInterface} from '@app/shared'
 import {environment} from 'src/environments/environment'
 import {AuthResponseInterface} from 'src/app/auth/types/authResponse.interface'
 

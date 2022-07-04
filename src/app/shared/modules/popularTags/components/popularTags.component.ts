@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core'
 import {select, Store} from '@ngrx/store'
 import {Observable} from 'rxjs'
-import {PopularTagType} from 'src/app/shared/types/popularTagType.interface'
+import {PopularTagType} from '@app/shared'
 import {getPopularTagsAction} from '../store/actions/getPopularActions.action'
 import {
   errorSelector,

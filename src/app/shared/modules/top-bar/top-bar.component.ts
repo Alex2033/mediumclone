@@ -6,7 +6,7 @@ import {
 import {Component, OnInit} from '@angular/core'
 import {select, Store} from '@ngrx/store'
 import {Observable} from 'rxjs'
-import {CurrentUserInterface} from '../../types/currentUser.interface'
+import {CurrentUserInterface} from '@app/shared'
 
 @Component({
   selector: 'mc-top-bar',

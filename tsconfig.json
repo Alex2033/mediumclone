@@ -15,6 +15,18 @@
       "es2018",
       "dom"
     ],
+    "paths": {
+      "@app/shared": ["src/app/shared"],
+      "@app/shared/*": ["src/app/shared/*"],
+      "@app/auth": ["src/app/auth"],
+      "@app/auth/*": ["src/app/auth/*"],
+      "@app/globalFeed": ["src/app/globalFeed"],
+      "@app/globalFeed/*": ["src/app/globalFeed/*"],
+      "@app/yourFeed": ["src/app/yourFeed"],
+      "@app/yourFeed/*": ["src/app/yourFeed/*"],
+      "@app/tagFeed": ["src/app/tagFeed"],
+      "@app/tagFeed/*": ["src/app/tagFeed/*"],
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

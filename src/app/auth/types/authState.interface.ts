@@ -1,4 +1,4 @@
-import {CurrentUserInterface} from 'src/app/shared/types/currentUser.interface'
+import {CurrentUserInterface} from '@app/shared'
 import {BackendErrorsInterface} from './backendErrors.interface'
 
 export interface AuthStateInterface {

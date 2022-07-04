@@ -5,11 +5,11 @@ import {
 import {PopularTagsService} from './../../services/popularTags/popularTags.service'
 import {Injectable} from '@angular/core'
 import {createEffect, Actions, ofType} from '@ngrx/effects'
-import {map, catchError, switchMap, tap} from 'rxjs/operators'
+import {map, catchError, switchMap} from 'rxjs/operators'
 
 import {of} from 'rxjs'
 import {getPopularTagsAction} from '../actions/getPopularActions.action'
-import {PopularTagType} from 'src/app/shared/types/popularTagType.interface'
+import {PopularTagType} from '@app/shared'
 
 @Injectable()
 export class GetPopularTagsEffect {
