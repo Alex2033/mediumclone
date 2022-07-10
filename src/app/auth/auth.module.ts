@@ -8,9 +8,8 @@ import {RegisterComponent} from 'src/app/auth/components/register/register.compo
 import {RouterModule} from '@angular/router'
 import {ReactiveFormsModule} from '@angular/forms'
 import {reducers} from 'src/app/auth/store/reducers'
-import {AuthService} from 'src/app/auth/services/auth.service'
 import {RegisterEffect} from 'src/app/auth/store/effects/register.effect'
-import {BackendErrorMessagesModule, PersistanceService} from '@app/shared'
+import {BackendErrorMessagesModule} from '@app/shared'
 import {LoginComponent} from './components/login/login.component'
 import {GetCurrentUserEffect} from './store/effects/getCurrentUser.effect'
 
@@ -39,6 +38,5 @@ const routes = [
     BackendErrorMessagesModule,
   ],
   declarations: [RegisterComponent, LoginComponent],
-  providers: [AuthService, PersistanceService],
 })
 export class AuthModule {}

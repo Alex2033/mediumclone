@@ -3,7 +3,7 @@ import {Injectable} from '@angular/core'
 import {Observable} from 'rxjs'
 import {map} from 'rxjs/operators'
 import {PopularTagType} from '@app/shared'
-import {environment} from 'src/environments/environment'
+import {environment} from '@app/environments'
 import {GetPopularTagsResponseInterface} from '../../types/getPopularTagsResponse.interface'
 
 @Injectable()

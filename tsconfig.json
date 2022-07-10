@@ -16,6 +16,7 @@
       "dom"
     ],
     "paths": {
+      "@app/environments": ["src/environments"],
       "@app/shared": ["src/app/shared"],
       "@app/shared/*": ["src/app/shared/*"],
       "@app/auth": ["src/app/auth"],

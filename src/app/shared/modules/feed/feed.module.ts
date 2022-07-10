@@ -7,12 +7,10 @@ import {StoreModule} from '@ngrx/store'
 import {reducers} from './store/reducers'
 import {FeedService} from './services/feed.service'
 import {RouterModule} from '@angular/router'
-import {
-  ErrorMessageModule,
-  LoadingModule,
-  PaginationModule,
-  TagListModule,
-} from '@app/shared'
+import {ErrorMessageModule} from '../errorMessage'
+import {LoadingModule} from '../loading'
+import {PaginationModule} from '../pagination'
+import {TagListModule} from '../tagList'
 
 @NgModule({
   imports: [

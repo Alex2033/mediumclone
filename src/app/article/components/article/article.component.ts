@@ -11,7 +11,7 @@ import {select, Store} from '@ngrx/store'
 import {parseUrl, stringify} from 'query-string'
 import {Observable, Subscription} from 'rxjs'
 import {environment} from '@app/environments'
-import {getFeedAction} from '../../store/actions/getFeed.action'
+import {getFeedAction} from '../../store/actions/getArticle.action'
 import {
   errorSelector,
   feedSelector,
@@ -20,10 +20,10 @@ import {
 import {GetFeedResponseInterface} from '../../types/getFeedReponse.interface'
 
 @Component({
-  selector: 'mc-feed',
-  templateUrl: './feed.component.html',
+  selector: 'mc-article',
+  templateUrl: './article.component.html',
 })
-export class FeedComponent implements OnInit, OnDestroy, OnChanges {
+export class ArticleComponent implements OnInit, OnDestroy, OnChanges {
   @Input('apiUrl') apiUrlProps: string
 
   isLoading$: Observable<boolean>
