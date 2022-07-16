@@ -12,10 +12,16 @@ export class ArticleService {
   constructor(private http: HttpClient) {}
 
   getArticle(slug: string): Observable<ArticleInterface> {
-    const fullUrl = `${environment.apiUrl}/articles/${slug}`
+    const url = `${environment.apiUrl}/articles/${slug}`
 
     return this.http
-      .get<GetArticleResponseInterface>(fullUrl)
+      .get<GetArticleResponseInterface>(url)
       .pipe(map((response: GetArticleResponseInterface) => response.article))
+  }
+
+  deleteArticle(slug: string): Observable<{}> {
+    const url = `${environment.apiUrl}/articles/${slug}`
+
+    return this.http.delete<{}>(url)
   }
 }
