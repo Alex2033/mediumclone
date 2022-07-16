@@ -14,6 +14,7 @@ import {AuthModule} from '@app/auth'
 import {GlobalFeedModule} from '@app/globalFeed'
 import {YourFeedModule} from '@app/yourFeed'
 import {TagFeedModule} from '@app/tagFeed'
+import {ArticleModule} from '@app/article'
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,6 +36,7 @@ import {TagFeedModule} from '@app/tagFeed'
     GlobalFeedModule,
     YourFeedModule,
     TagFeedModule,
+    ArticleModule,
   ],
   providers: [
     {
