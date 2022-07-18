@@ -19,7 +19,7 @@ import {deleteArticleAction} from '../../store/actions/deleteArticle.action'
 })
 export class ArticleComponent implements OnInit, OnDestroy {
   slug: string
-  article: ArticleInterface
+  article$: Observable<ArticleInterface>
   isLoading$: Observable<boolean>
   error$: Observable<string | null>
   isAuthor$: Observable<boolean>
@@ -40,11 +40,11 @@ export class ArticleComponent implements OnInit, OnDestroy {
 
   initializeValues(): void {
     this.slug = this.route.snapshot.paramMap.get('slug')
-    this.store
-      .pipe(select(articleSelector), takeUntil(this.destroy$))
-      .subscribe((article: ArticleInterface) => {
-        this.article = article
-      })
+    this.article$ = this.store.pipe(
+      select(articleSelector),
+      takeUntil(this.destroy$)
+    )
+
     this.isLoading$ = this.store.pipe(select(isLoadingSelector))
     this.error$ = this.store.pipe(select(errorSelector))
     this.isAuthor$ = combineLatest([

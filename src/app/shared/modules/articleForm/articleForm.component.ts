@@ -7,7 +7,11 @@ import {
   EventEmitter,
 } from '@angular/core'
 import {FormGroup, FormBuilder} from '@angular/forms'
-import {ArticleInputInterface, BackendErrorsInterface} from '@app/shared/types'
+import {
+  ArticleInputInterface,
+  ArticlePostBodyInterface,
+  BackendErrorsInterface,
+} from '@app/shared/types'
 
 @Component({
   selector: 'mc-article-form',
@@ -17,10 +21,10 @@ import {ArticleInputInterface, BackendErrorsInterface} from '@app/shared/types'
 export class ArticleFormComponent implements OnInit {
   @Input('initialValues') initialValuesProps: ArticleInputInterface
   @Input('isSubmitting') isSubmittingProps: boolean = false
-  @Input('error') errorProps: BackendErrorsInterface | null
+  @Input('errors') errorProps: BackendErrorsInterface | null
 
   @Output('articleSubmit')
-  articleSubmitEvent: EventEmitter<ArticleInputInterface> = new EventEmitter<ArticleInputInterface>()
+  articleSubmitEvent: EventEmitter<ArticlePostBodyInterface> = new EventEmitter<ArticlePostBodyInterface>()
 
   form: FormGroup
 
@@ -35,11 +39,11 @@ export class ArticleFormComponent implements OnInit {
       title: this.initialValuesProps.title,
       description: this.initialValuesProps.description,
       body: this.initialValuesProps.body,
-      tags: this.initialValuesProps.tagList.join(' '),
+      tagList: this.initialValuesProps.tagList.join(' '),
     })
   }
 
   onSubmit(): void {
-    this.articleSubmitEvent.emit(this.form.value)
+    this.articleSubmitEvent.emit({article: this.form.value})
   }
 }

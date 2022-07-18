@@ -1,4 +1,14 @@
 import {Component, OnInit, ChangeDetectionStrategy} from '@angular/core'
+import {
+  ArticleInputInterface,
+  ArticlePostBodyInterface,
+  BackendErrorsInterface,
+} from '@app/shared'
+import {Store, select} from '@ngrx/store'
+import {Observable} from 'rxjs'
+import {tap} from 'rxjs/operators'
+import {createArticleAction} from './store/createArticle.action'
+import {isSubmittingSelector, validationErrorsSelector} from './store/selectors'
 
 @Component({
   selector: 'mc-create-article',
@@ -6,18 +16,27 @@ import {Component, OnInit, ChangeDetectionStrategy} from '@angular/core'
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CreateArticleComponent implements OnInit {
-  initialValues = {
-    title: 'Foo',
-    description: 'Baz',
-    body: 'Baz',
-    tagList: ['hello', 'world'],
+  initialValues: ArticleInputInterface = {
+    title: '',
+    description: '',
+    body: '',
+    tagList: [],
   }
 
-  constructor() {}
+  isSubmitting$: Observable<boolean>
+  backendErrors$: Observable<BackendErrorsInterface | null>
 
-  ngOnInit(): void {}
+  constructor(private store: Store) {}
 
-  onSubmit(res: any): void {
-    console.log('res:', res)
+  ngOnInit(): void {
+    this.isSubmitting$ = this.store.pipe(select(isSubmittingSelector))
+    this.backendErrors$ = this.store.pipe(
+      select(validationErrorsSelector),
+      tap((val) => console.log(val))
+    )
+  }
+
+  onSubmit(article: ArticlePostBodyInterface): void {
+    this.store.dispatch(createArticleAction({article}))
   }
 }
