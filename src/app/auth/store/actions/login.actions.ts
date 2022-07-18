@@ -1,5 +1,4 @@
-import {BackendErrorsInterface} from 'src/app/auth/types/backendErrors.interface'
-import {CurrentUserInterface} from '@app/shared'
+import {BackendErrorsInterface, CurrentUserInterface} from '@app/shared'
 import {LoginRequestInterface} from 'src/app/auth/types/loginRequest.interface'
 import {ActionTypes} from 'src/app/auth/store/actionTypes'
 import {createAction, props} from '@ngrx/store'

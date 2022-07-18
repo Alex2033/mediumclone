@@ -1,5 +1,4 @@
-import {CurrentUserInterface} from '@app/shared'
-import {BackendErrorsInterface} from './backendErrors.interface'
+import {BackendErrorsInterface, CurrentUserInterface} from '@app/shared'
 
 export interface AuthStateInterface {
   isSubmitting: boolean

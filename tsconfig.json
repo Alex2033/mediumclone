@@ -29,6 +29,8 @@
       "@app/tagFeed/*": ["src/app/tagFeed/*"],
       "@app/article": ["src/app/article"],
       "@app/article/*": ["src/app/article/*"],
+      "@app/createArticle": ["src/app/createArticle"],
+      "@app/createArticle/*": ["src/app/createArticle/*"],
     }
   },
   "angularCompilerOptions": {

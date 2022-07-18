@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core'
 import {FormGroup, FormBuilder, Validators} from '@angular/forms'
+import {BackendErrorsInterface} from '@app/shared'
 import {Store, select} from '@ngrx/store'
 import {Observable} from 'rxjs'
 
@@ -9,7 +10,6 @@ import {
   validationErrorSelector,
 } from 'src/app/auth/store/selectors'
 import {RegisterRequestInterface} from 'src/app/auth/types/registerRequest.interface'
-import {BackendErrorsInterface} from '../../types/backendErrors.interface'
 
 @Component({
   selector: 'mc-register',

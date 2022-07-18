@@ -8,10 +8,10 @@
         </p>
 
         <!-- backend errors -->
-        <app-backend-error-messages
+        <mc-backend-error-messages
           *ngIf="backendErrors$ | async"
           [backendErrors]="backendErrors$ | async"
-        ></app-backend-error-messages>
+        ></mc-backend-error-messages>
 
         <!-- submit form -->
         <form [formGroup]="form" (ngSubmit)="onSubmit()">

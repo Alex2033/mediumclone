@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core'
 import {FormGroup, FormBuilder} from '@angular/forms'
+import {BackendErrorsInterface} from '@app/shared'
 import {Store, select} from '@ngrx/store'
 import {Observable} from 'rxjs'
 import {loginAction} from '../../store/actions/login.actions'
@@ -7,7 +8,6 @@ import {
   isSubmittingSelector,
   validationErrorSelector,
 } from '../../store/selectors'
-import {BackendErrorsInterface} from '../../types/backendErrors.interface'
 import {LoginRequestInterface} from '../../types/loginRequest.interface'
 
 @Component({
